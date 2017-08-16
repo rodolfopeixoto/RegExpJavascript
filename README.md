@@ -47,9 +47,60 @@ Regras de regExp
 ---------------------
 
 ###### Encontrar o CPF com . e - ou sem . e -.
+O ponto de interrogação (?), que significa zero ou uma vez, é um quantifier. [ Se é opcional por exemplo]
 ```
 \d{3}\.?\d{3}\.?\d{3}-?\d{2}
 ```
+A expressão \.{0,1} diz que pode não ter o ponto, mas também pode ter um ponto só, caso tenha dois não da match
+```
+\d{3}\.{0,1}\d{3}\.?\d{3}-?\d{2}
+```
+Um conjunto de caracteres que pode ser utilizado utilizamos conchete [-.].
+**OBS:** \. = ao ponto quando está na expressão, quando for utilizar dentro do [ ] utilizar [.]
+```
+\d{3}\.{0,1}\d{3}\.?\d{3}[-.]?\d{2}
+```
+
+Podemos mudar o \d para um intervalo, por exemplo: de 0 à 9. [0-9]
+```
+[0-9]{3}\.{0,1}\d{3}\.?\d{3}[-.]?\d{2}
+```
+
+
+Pegando por exemplo só 21 de Maio de 1993 [ Datas ]
+**\s** caracter para pegar espaços em brancos. **\s{1,}** caso coloque {Número,} ele entende que é o número ou mais vezes.
+outra opção é usar também o +.  {1,} = +
+```
+[1-3]?\d\s{1,}
+```
+ou
+```
+[1-3]?\d\s+
+```
+
+Cadeia de caracteres [A-Z] maisculo ou [a-z] minusculo, também pode-se colocar a quantidade de caracteres
+[a-z]{3,5}, sendo que o número conta de 0 à n, logo se Maio = 4 caracteres e Fevereiro tem 9 caracteres, então
+o mínimo é 4 - 1 = 3 e 9 - 1 = 8, sendo assim:
+```
+[1-3]?\d\s+de\s+[A-Z][a-z]{3,8}
+```
+Expressão regular final para pegar: 28 de Maio de 1991
+
+```
+[1-3]?\d\s+de\s+[A-Z][a-z]{3,8}\s+de\s\d{4}
+```
+Melhorando, não aceitando Anos absurdos. Sendo o primeiro [1]991 número, 1 ou 2.
+
+```
+[1-3]?\d\s+de\s+[A-Z][a-z]{3,8}\s+de\s[12]\d{3}
+```
+##### Quantifier
+? - zero ou uma vez
+\* - zero ou mais vezes
+\+ - uma ou mais vezes
+{n} - exatamente n  vezes
+{n,} - no mínimo n vezes
+{n,m} - no mínimo n+1 vezes, no máximo m vezes 
 
 ###Links diretos:
 
