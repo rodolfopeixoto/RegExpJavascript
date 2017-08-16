@@ -95,29 +95,20 @@ Melhorando, não aceitando Anos absurdos. Sendo o primeiro [1]991 número, 1 ou 
 [1-3]?\d\s+de\s+[A-Z][a-z]{3,8}\s+de\s[12]\d{3}
 ```
 ##### Quantifier
-? - zero ou uma vez
-
-\* - zero ou mais vezes
-
-\+ - uma ou mais vezes
-
-{n} - exatamente n  vezes
-
-{n,} - no mínimo n vezes
-
-{n,m} - no mínimo n+1 vezes, no máximo m vezes 
+* ? - zero ou uma vez
+* \* - zero ou mais vezes
+* \+ - uma ou mais vezes
+* {n} - exatamente n  vezes
+* {n,} - no mínimo n vezes
+* {n,m} - no mínimo n+1 vezes, no máximo m vezes 
 
 
 #### Classes de char - []
-[A-Z] - letras de A até Z
-
-[123] - 1,2 ou 3
-
-\d    - todos os digitos [0-9]
-
-\s    - whitespace [\t\r\n\f]
-
-\w    - wordchar [A-Za-z0-9_]
+* [A-Z] - letras de A até Z
+* [123] - 1,2 ou 3
+* \d    - todos os digitos [0-9]
+* \s    - whitespace [\t\r\n\f]
+* \w    - wordchar [A-Za-z0-9_]
 
 Padrão para: 19h32min16s
 ```
