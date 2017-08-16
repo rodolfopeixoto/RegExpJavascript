@@ -110,6 +110,11 @@ Melhorando, não aceitando Anos absurdos. Sendo o primeiro [1]991 número, 1 ou 
 * \s    - whitespace [\t\r\n\f]
 * \w    - wordchar [A-Za-z0-9_]
 
+#### Âncoras
+Existem âncoras predefinidas que selecionam uma posição dentro do alvo.
+* \b é uma âncora que seleciona um word boundary, isso é o início ou fim da palavra.
+* ^ é uma âncora que seleciona o início da string alvo.
+* $ é uma âncora que seleciona o fim do alvo.
 Padrão para: 19h32min16s
 ```
 \d{2}h[0-5]\d{1}min[0-5]\d{1}s
@@ -119,7 +124,36 @@ Padrão para placas: exemplo KMG-8089
 [A-Z]{3}-\d{4}
 ```
 
-###Links diretos:
+
+#### Âncoras ou asserções atômicas de largura 
+
+O que é: especificam uma posição na cadeia de caracteres em que uma correspondência deve ocorrer. ... Por exemplo, ^ Especifica que a correspondência deve começar no início de uma linha ou uma cadeia de caracteres.
+**OBS:** Existem várias âncoras predefinidas, mas as mais comuns são ^, $ e \b. Lembrando também que os caracteres ^ e $ são meta-chars.
+
+* \b - word boundary Para encontrar limites de palavras
+Exemplo:
+
+input:
+** denise teste, 987.654.321-00,28 de Dezembro de 1991,(31)45562712,SCS Qd. 8 Bl. B-50,11,70333-900,Rio Grande **
+
+```
+\bde\b
+```
+
+Outpu:
+denise teste, 987.654.321-00,28 **de** Dezembro **de** 1991,(31)45562712,SCS Qd. 8 Bl. B-50,11,70333-900,Rio Grande
+
+
+Exemplo ^ - inicio e $ final
+Input: 
+file:///home/rodolfopeixoto/Documents/projetos-aprendendo/regexJavascript/index.html
+
+RegExp = Encontre no inicio tudo que tenha file:// .+ = todo tipo de caracter que ocorra 0 ou mais vezes e no final deve ter um .html
+```
+^file://.+\.html$
+```
+
+### Links diretos:
 
 
 Desenvolvimento
