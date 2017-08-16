@@ -74,10 +74,12 @@ Pegando por exemplo só 21 de Maio de 1993 [ Datas ]
 
 **\s** caracter para pegar espaços em brancos. **\s{1,}** caso coloque {Número,} ele entende que é o número ou mais vezes.
 outra opção é usar também o +.  {1,} = +
+
 ```
 [1-3]?\d\s{1,}
 ```
-ou
+**ou**
+
 ```
 [1-3]?\d\s+
 ```
@@ -126,7 +128,7 @@ Existem âncoras predefinidas que selecionam uma posição dentro do alvo.
 * ^ é uma âncora que seleciona o início da string alvo.
 * $ é uma âncora que seleciona o fim do alvo.
 
-Padrão para: 19h32min16s
+Padrão para: **19h32min16s**
 ```
 \d{2}h[0-5]\d{1}min[0-5]\d{1}s
 ```
@@ -144,9 +146,9 @@ O que é: especificam uma posição na cadeia de caracteres em que uma correspon
 
 * \b - word boundary Para encontrar limites de palavras
 
-Exemplo:
+**Exemplo:**
 
-input:
+**Input:**
 
 **denise teste, 987.654.321-00,28 de Dezembro de 1991,(31)45562712,SCS Qd. 8 Bl. B-50,11,70333-900,Rio Grande**
 
@@ -154,14 +156,14 @@ input:
 \bde\b
 ```
 
-Output:
+**Output:**
 
 denise teste, 987.654.321-00,28 **de** Dezembro **de** 1991,(31)45562712,SCS Qd. 8 Bl. B-50,11,70333-900,Rio Grande
 
 
 Exemplo ^ - inicio e $ final
 
-Input: 
+**Input:** 
 
 file:///home/rodolfopeixoto/Documents/projetos-aprendendo/regexJavascript/index.html
 
